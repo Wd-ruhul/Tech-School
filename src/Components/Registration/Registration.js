@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { AuthContext } from '../../Context/UserContext';
+import { Link } from 'react-router-dom';
 
 const Registration = () => {
   const { createUser } = useContext(AuthContext)
@@ -54,6 +55,11 @@ const Registration = () => {
         <Button variant="primary" type="submit">
           Registration
         </Button>
+        <p>
+          <small>
+            Already Have An Account ,Please <Link to="/login">Login</Link>
+          </small>
+        </p>
       </Form>
     </div>
   );

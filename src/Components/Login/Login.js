@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from '../../Context/UserContext';
 
 const Login = () => {
@@ -33,7 +33,8 @@ const Login = () => {
     loginWithGoogle()
       .then((result) => {
         const user = result.user;
-        navigate(from, { replace: true });
+        console.log("🚀 ~ file: Login.js ~ line 36 ~ .then ~ user", user)
+        // navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error);
@@ -64,6 +65,12 @@ const Login = () => {
         <Button onClick={handleGoogleSignIn} variant="outline-success">
           Log in With Google
         </Button>
+
+        <p>
+          <small>
+            Not Regstered? ,Please <Link to="/registration">Sing Up</Link>
+          </small>
+        </p>
       </Form>
     </div>
   );
