@@ -33,7 +33,7 @@ const Header = () => {
 
               <Link
                 className=" nav  me-5 text-decoration-none"
-                to="/registration"
+                to="/faq"
               >
                 {" "}
                 Faq

@@ -8,7 +8,7 @@ const Blog = () => {
     <div className="m-5">
       <Container>
         
-        <h2 className='text-center text-info'>Welcome To Our Blog</h2>
+        <h2 className='text-center text-info mb-3'>Welcome To Our Blog</h2>
         <Row>
           <Col lg="6">
             <div className="bg-info p-4 text-white mb-3">
