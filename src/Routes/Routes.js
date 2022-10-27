@@ -1,6 +1,7 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Components/Blog/Blog";
+import Courses from "../Components/Courses/Courses";
 import FAQ from "../Components/FAQ/FAQ";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
@@ -16,6 +17,11 @@ export const routes = createBrowserRouter([
         element: <Home></Home>,
       },
       {
+        path: "/courses",
+        loader: async () => fetch("http://localhost:5000/news-categories"),
+        element: <Courses></Courses>,
+      },
+      {
         path: "/login",
         element: <Login></Login>,
       },
@@ -29,7 +35,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/faq",
-        element: <FAQ></FAQ>
+        element: <FAQ></FAQ>,
       },
     ],
   },
