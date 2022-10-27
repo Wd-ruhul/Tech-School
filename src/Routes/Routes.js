@@ -20,19 +20,19 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/courses",
-        loader: async () => fetch("http://localhost:5000/courses-categories"),
+        loader: async () => fetch("https://tech-school-server-delta.vercel.app/courses-categories"),
         element: <Courses></Courses>,
       },
       {
         path: "/course_details/:id",
         loader: async ({ params }) =>
-          fetch(`http://localhost:5000/course_details/${params.id}`),
+          fetch(`https://tech-school-server-delta.vercel.app/course_details/${params.id}`),
         element: <CourseDetails></CourseDetails>,
       },
       {
         path: "/premiumCourse/:id",
         loader: async ({ params }) =>
-          fetch(`http://localhost:5000/course_details/${params.id}`),
+          fetch(`https://tech-school-server-delta.vercel.app/course_details/${params.id}`),
         element: (
           <PrivateRoutes>
             <CourseDetails></CourseDetails>,
