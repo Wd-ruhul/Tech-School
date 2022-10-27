@@ -23,26 +23,17 @@ const Header = () => {
                 Login
               </Link>
 
-              <Link
-                className=" nav  me-5 text-decoration-none"
-                to="/courses"
-              >
+              <Link className=" nav  me-5 text-decoration-none" to="/courses">
                 {" "}
                 Courses
               </Link>
 
-              <Link
-                className=" nav  me-5 text-decoration-none"
-                to="/faq"
-              >
+              <Link className=" nav  me-5 text-decoration-none" to="/faq">
                 {" "}
                 Faq
               </Link>
 
-              <Link
-                className="nav  me-5 text-decoration-none"
-                to="/blog"
-              >
+              <Link className="nav  me-5 text-decoration-none" to="/blog">
                 {" "}
                 Blog
               </Link>
