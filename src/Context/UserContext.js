@@ -7,6 +7,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
 import { Navigate, useLocation } from "react-router-dom";
 import app from "./../Firebase/Firebase.config";
@@ -34,6 +35,10 @@ const UserContext = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
+  const logOut = ()=>{
+  return signOut(auth)
+}
+
  useEffect(() => {
    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
      setUser(currentUser);
@@ -47,7 +52,14 @@ const UserContext = ({ children }) => {
 
 
 
-  const authInfo = { user, createUser, logIn, loginWithGoogle, loading };
+  const authInfo = {
+    user,
+    createUser,
+    logIn,
+    loginWithGoogle,
+    loading,
+    logOut,
+  };
   
 
   return (

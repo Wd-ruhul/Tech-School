@@ -1,35 +1,39 @@
 import React from "react";
-import { useLoaderData } from 'react-router-dom';
-import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
+import Image from "react-bootstrap/Image";
+import { Link, useLoaderData } from 'react-router-dom';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+
 
 const CourseDetails = (props) => {
   const courseDetails = useLoaderData()
+  
  
   
 
   return (
     <div>
-      course Details: {courseDetails.name}
-      <Card style={{ width: "30rem" }}>
-        <Card.Img variant="top" src={courseDetails.img} />
-        <Card.Body>
-          <Card.Title>{courseDetails.name}</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-        </Card.Body>
-        <ListGroup className="list-group-flush">
-          <ListGroup.Item>Cras justo odio</ListGroup.Item>
-          <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-          <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-        </ListGroup>
-        <Card.Body>
-          <Card.Link href="#">Card Link</Card.Link>
-          <Card.Link href="#">Another Link</Card.Link>
-        </Card.Body>
-      </Card>
+      <h1 className="text-center text-info text-decoration-underline">
+        {courseDetails.name}
+      </h1>
+
+      <Container>
+        <Row>
+          <Col>
+            <Image
+              className=""
+              style={{ width: "40rem" }}
+              src={courseDetails.img}
+            ></Image>
+          </Col>
+          <Col>
+            <p>{courseDetails.info}</p>
+            
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };

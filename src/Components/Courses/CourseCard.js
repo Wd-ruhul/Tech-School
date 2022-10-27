@@ -1,10 +1,11 @@
 import React from 'react';
-import ListGroup from "react-bootstrap/ListGroup";
+
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Link } from 'react-router-dom';
 
 const CourseCard = (props) => {
-  const { id, name,img } = props.category;
+  const {_id, name,img } = props.category;
   return (
     <div>
       <div>
@@ -16,7 +17,14 @@ const CourseCard = (props) => {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">
+              <Link
+                className="text-decoration-none text-white"
+                to={`/premiumCourse/${_id}`}
+              >
+                CheckOut Premium Course
+              </Link>
+            </Button>
           </Card.Body>
         </Card>
       </div>

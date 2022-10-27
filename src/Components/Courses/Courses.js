@@ -3,9 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {useLoaderData } from "react-router-dom";
-import ListGroup from "react-bootstrap/ListGroup";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+
 import CourseLeftSideLink from "./CourseLeftSideLink";
 import CourseCard from "./CourseCard";
 

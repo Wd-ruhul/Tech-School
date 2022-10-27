@@ -8,6 +8,7 @@ import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
 import Registration from "../Components/Registration/Registration";
 import Main from "../Layout/Main";
+import PrivateRoutes from "./PrivateRoutes";
 export const routes = createBrowserRouter([
   {
     path: "/",
@@ -15,7 +16,7 @@ export const routes = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <FAQ></FAQ>
       },
       {
         path: "/courses",
@@ -26,7 +27,17 @@ export const routes = createBrowserRouter([
         path: "/course_details/:id",
         loader: async ({ params }) =>
           fetch(`http://localhost:5000/course_details/${params.id}`),
-        element: <CourseDetails></CourseDetails>
+        element: <CourseDetails></CourseDetails>,
+      },
+      {
+        path: "/premiumCourse/:id",
+        loader: async ({ params }) =>
+          fetch(`http://localhost:5000/course_details/${params.id}`),
+        element: (
+          <PrivateRoutes>
+            <CourseDetails></CourseDetails>,
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/login",
@@ -45,5 +56,11 @@ export const routes = createBrowserRouter([
         element: <FAQ></FAQ>,
       },
     ],
+  },
+  {
+    path: "*",
+    element: (
+      <div className="text-warning text-bold"> Ops! 404 Not Found</div>
+    ),
   },
 ]);

@@ -34,7 +34,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log("🚀 ~ file: Login.js ~ line 36 ~ .then ~ user", user)
-        // navigate(from, { replace: true });
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error);
